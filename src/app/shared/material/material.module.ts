@@ -10,9 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   exports: [
     CdkTableModule,
     MatTableModule,
@@ -24,5 +22,4 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule,
   ],
 })
-export class MaterialModule {
-}
+export class MaterialModule {}

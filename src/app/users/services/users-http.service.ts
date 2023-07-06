@@ -8,9 +8,9 @@ import { UserData } from '../models/user-data.model';
   providedIn: 'root',
 })
 export class UsersHttpService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  public get users():Observable<UserData[]> {
+  public get users(): Observable<UserData[]> {
     return this.httpClient.get<UserData[]>(environment.API_PATH);
   }
 }

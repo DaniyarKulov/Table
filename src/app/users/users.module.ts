@@ -11,10 +11,7 @@ import { UsersEffects } from './users-store/users.effects';
 import { usersReducer } from './users-store/users.reducer';
 
 @NgModule({
-  declarations: [
-    TableComponent,
-    UsersComponent,
-  ],
+  declarations: [TableComponent, UsersComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -25,5 +22,4 @@ import { usersReducer } from './users-store/users.reducer';
   ],
   exports: [UsersComponent],
 })
-export class UsersModule {
-}
+export class UsersModule {}

@@ -1,5 +1,5 @@
 export type CollumnsName =
-  'name'
+  | 'name'
   | 'picture'
   | 'age'
   | 'company'

@@ -79,5 +79,6 @@ export class TableComponent implements OnInit, OnDestroy {
     this.isCheckedColumnsName[columnName] = !this.isCheckedColumnsName[columnName];
     this.collumName = columnName;
   }
+
 }
 

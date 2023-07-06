@@ -11,14 +11,13 @@ export class UsersFacadeService {
   public users$ = this.store$.select(selectUsers);
   public isLoading$ = this.store$.select(selectLoading);
 
-  constructor(private store$: Store) {
-  }
+  constructor(private store$: Store) {}
 
   public getLoading(): void {
     this.store$.dispatch(getLoading());
   }
 
-  public sortCriteria(sortCriteria:Sort):void {
+  public sortCriteria(sortCriteria: Sort): void {
     this.store$.dispatch(getSortCriteria({ sortCriteria }));
   }
 }

@@ -5,7 +5,7 @@ export interface UserData {
   isActive: boolean;
   balance: string;
   picture: string;
-  age: number,
+  age: number;
   name: Name;
   company: string;
   email: string;
