@@ -1,1 +1,4 @@
-export const localeStringComporator = (a: string = '', b: string = ''): number => a.localeCompare(b);
+export const localeStringComporator = (
+  a: string = '',
+  b: string = ''
+): number => a.localeCompare(b);

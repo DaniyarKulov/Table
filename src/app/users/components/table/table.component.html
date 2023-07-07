@@ -5,31 +5,56 @@
   </mat-form-field>
 
   <div class="content">
-    <table (matSortChange)="sortUsers($event)" [dataSource]="users" class="table" mat-table matSort matSortDisableClear>
+    <table
+      (matSortChange)="sortedUsers($event)"
+      [dataSource]="users"
+      class="table"
+      mat-table
+      matSort
+      matSortDisableClear
+    >
       <ng-container matColumnDef="name" sticky>
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.name }"
+          [agnColumnVision]="isCheckedColumnsName.name"
           class="table__name"
           mat-header-cell
           mat-sort-header
-          >Name
+        >
+          Name
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.name }" mat-cell>
-          <p *ngIf="element.name">{{ element.name.first }} {{ element.name.last }}</p>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.name"
+          mat-cell
+        >
+          <p
+            *ngIf="element.name"
+            [ngClass]="{
+              'red-dot': element.isActive,
+              'green-dot': !element.isActive
+            }"
+          >
+            {{ element.name.first }} {{ element.name.last }}
+          </p>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="age">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.age }"
           class="table__age"
+          [agnColumnVision]="isCheckedColumnsName.age"
           mat-header-cell
           mat-sort-header
-          >Age
+        >
+          Age
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.age }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.age"
+          mat-cell
+        >
           {{ element.age }}
         </td>
       </ng-container>
@@ -37,26 +62,41 @@
       <ng-container matColumnDef="picture">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.picture }"
+          [agnColumnVision]="isCheckedColumnsName.picture"
           class="table__picture"
-          mat-header-cell>
+          mat-header-cell
+        >
           Picture
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.picture }" mat-cell>
-          <img [alt]="element.id" [ngSrc]="element.picture" height="32" width="32" />
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.picture"
+          mat-cell
+        >
+          <img
+            [alt]="element.id"
+            [ngSrc]="element.picture"
+            height="32"
+            width="32"
+          />
         </td>
       </ng-container>
 
       <ng-container matColumnDef="company">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.company }"
+          [agnColumnVision]="isCheckedColumnsName.company"
           class="table__company"
           mat-header-cell
           mat-sort-header
-          >Company
+        >
+          Company
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.company }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.company"
+          mat-cell
+        >
           {{ element.company }}
         </td>
       </ng-container>
@@ -64,13 +104,18 @@
       <ng-container matColumnDef="balance">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.balance }"
+          [agnColumnVision]="isCheckedColumnsName.balance"
           class="table__balance"
           mat-header-cell
           mat-sort-header
-          >Balance
+        >
+          Balance
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.balance }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.balance"
+          mat-cell
+        >
           {{ element.balance }}
         </td>
       </ng-container>
@@ -78,13 +123,18 @@
       <ng-container matColumnDef="email">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.email }"
+          [agnColumnVision]="isCheckedColumnsName.email"
           class="table__email"
           mat-header-cell
           mat-sort-header
-          >Email
+        >
+          Email
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.email }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.email"
+          mat-cell
+        >
           {{ element.email }}
         </td>
       </ng-container>
@@ -92,13 +142,18 @@
       <ng-container matColumnDef="address">
         <th
           *matHeaderCellDef
-          [ngClass]="{ vision: isCheckedColumnsName.address }"
+          [agnColumnVision]="isCheckedColumnsName.address"
           class="table__address"
           mat-header-cell
           mat-sort-header
-          >Address
+        >
+          Address
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.address }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.address"
+          mat-cell
+        >
           {{ element.address }}
         </td>
       </ng-container>
@@ -106,13 +161,18 @@
       <ng-container matColumnDef="tags">
         <th
           *matHeaderCellDef="let element"
-          [ngClass]="{ vision: isCheckedColumnsName.tags }"
+          [agnColumnVision]="isCheckedColumnsName.tags"
           class="table__tags"
           mat-header-cell
           mat-sort-header
-          >Tags
+        >
+          Tags
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.tags }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.tags"
+          mat-cell
+        >
           {{ element.tags }}
         </td>
       </ng-container>
@@ -120,13 +180,18 @@
       <ng-container matColumnDef="favorite_fruit">
         <th
           *matHeaderCellDef="let element"
-          [ngClass]="{ vision: isCheckedColumnsName.favorite_fruit }"
+          [agnColumnVision]="isCheckedColumnsName.favorite_fruit"
           class="table__fruits"
           mat-header-cell
           mat-sort-header
-          >Favorite fruit
+        >
+          Favorite fruit
         </th>
-        <td *matCellDef="let element" [ngClass]="{ vision: isCheckedColumnsName.favorite_fruit }" mat-cell>
+        <td
+          *matCellDef="let element"
+          [agnColumnVision]="isCheckedColumnsName.favorite_fruit"
+          mat-cell
+        >
           {{ element.favoriteFruit }}
         </td>
       </ng-container>
@@ -142,27 +207,39 @@
               <mat-icon>add</mat-icon>
             </button>
             <section *ngIf="isCheckboxVisible" class="table__section">
-              <ng-container *ngFor="let option of checkboxName">
+              <ng-container *ngFor="let option of checkboxNames">
                 <p>
-                  <mat-checkbox (change)="checkedColumnsName(option)" [checked]="isCheckedColumnsName[option]">{{
-                    option
-                  }}</mat-checkbox>
+                  <mat-checkbox
+                    (change)="checkedColumnsName(option)"
+                    [checked]="isCheckedColumnsName[option]"
+                    >{{ option }}</mat-checkbox
+                  >
                 </p>
               </ng-container>
             </section>
           </ng-container>
         </th>
-        <td *matCellDef="let element" mat-cell> </td>
+        <td *matCellDef="let element" mat-cell></td>
       </ng-container>
 
       <tr *matHeaderRowDef="columnsName" mat-header-row></tr>
       <tr *matRowDef="let row; columns: columnsName" mat-row></tr>
 
       <tr *matNoDataRow class="mat-row">
-        <td class="table__not-found" colspan="4">No data matching the filter: "{{ input.value }}"</td>
+        <td class="table__not-found" colspan="4">
+          No data matching the filter: "{{ input.value }}"
+        </td>
       </tr>
     </table>
   </div>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+  <div class="wrapper">
+    <div class="wrapper__status">
+      <p class="green-dot">Work</p>
+      <p class="red-dot">Fired</p>
+    </div>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
 </div>

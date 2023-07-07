@@ -10,7 +10,7 @@ import { UserData } from '../models/user-data.model';
 export class UsersHttpService {
   constructor(private httpClient: HttpClient) {}
 
-  public get users(): Observable<UserData[]> {
+  public getUsers(): Observable<UserData[]> {
     return this.httpClient.get<UserData[]>(environment.API_PATH);
   }
 }

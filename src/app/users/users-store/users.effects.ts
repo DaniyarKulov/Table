@@ -10,13 +10,16 @@ export class UsersEffects {
     this.actions$.pipe(
       ofType(getLoading),
       switchMap(() =>
-        this.usersHttpService.users.pipe(
+        this.usersHttpService.getUsers().pipe(
           map((users) => getUsersSuccess({ users })),
-          catchError(({ message }) => of(getUsersFailure(message))),
-        ),
-      ),
-    ),
+          catchError(({ message }) => of(getUsersFailure(message)))
+        )
+      )
+    )
   );
 
-  constructor(private actions$: Actions, private usersHttpService: UsersHttpService) {}
+  constructor(
+    private actions$: Actions,
+    private usersHttpService: UsersHttpService
+  ) {}
 }

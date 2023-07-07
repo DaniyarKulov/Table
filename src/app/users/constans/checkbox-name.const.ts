@@ -1,6 +1,6 @@
 import { CollumnsName } from '../models/collumnsName.type';
 
-export const checkboxName: CollumnsName[] = [
+export const checkboxNames: CollumnsName[] = [
   'name',
   'age',
   'picture',
