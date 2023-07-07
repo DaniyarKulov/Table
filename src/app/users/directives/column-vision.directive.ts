@@ -1,4 +1,10 @@
-import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 @Directive({
   selector: '[agnColumnVision]',
@@ -10,7 +16,6 @@ export class ColumnVisionDirective implements OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['isChecked']) {
-      console.log(changes['isChecked']);
       this.updateVisibility();
     }
   }

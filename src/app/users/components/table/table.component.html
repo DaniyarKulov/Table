@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-form-field>
+  <mat-form-field class="max-w-340">
     <mat-label>Search</mat-label>
     <input #input [formControl]="filterControl" matInput />
   </mat-form-field>
@@ -17,7 +17,7 @@
         <th
           *matHeaderCellDef
           [agnColumnVision]="isCheckedColumnsName.name"
-          class="table__name"
+          class="min-w-170"
           mat-header-cell
           mat-sort-header
         >
@@ -43,8 +43,8 @@
       <ng-container matColumnDef="age">
         <th
           *matHeaderCellDef
-          class="table__age"
           [agnColumnVision]="isCheckedColumnsName.age"
+          class="table__age"
           mat-header-cell
           mat-sort-header
         >
@@ -86,7 +86,7 @@
         <th
           *matHeaderCellDef
           [agnColumnVision]="isCheckedColumnsName.company"
-          class="table__company"
+          class="min-w-100"
           mat-header-cell
           mat-sort-header
         >
@@ -105,7 +105,7 @@
         <th
           *matHeaderCellDef
           [agnColumnVision]="isCheckedColumnsName.balance"
-          class="table__balance"
+          class="min-w-100"
           mat-header-cell
           mat-sort-header
         >
@@ -124,7 +124,7 @@
         <th
           *matHeaderCellDef
           [agnColumnVision]="isCheckedColumnsName.email"
-          class="table__email"
+          class="min-w-250"
           mat-header-cell
           mat-sort-header
         >
@@ -143,7 +143,7 @@
         <th
           *matHeaderCellDef
           [agnColumnVision]="isCheckedColumnsName.address"
-          class="table__address"
+          class="min-w-200"
           mat-header-cell
           mat-sort-header
         >
@@ -162,7 +162,7 @@
         <th
           *matHeaderCellDef="let element"
           [agnColumnVision]="isCheckedColumnsName.tags"
-          class="table__tags"
+          class="min-w-340"
           mat-header-cell
           mat-sort-header
         >
@@ -203,7 +203,11 @@
       <ng-container matColumnDef="isActive">
         <th *matHeaderCellDef mat-header-cell>
           <ng-container>
-            <button (click)="onCheckboxVisibility()">
+            <button
+              (click)="onCheckboxVisibility()"
+              color="primary"
+              mat-mini-fab
+            >
               <mat-icon>add</mat-icon>
             </button>
             <section *ngIf="isCheckboxVisible" class="table__section">
@@ -212,6 +216,7 @@
                   <mat-checkbox
                     (change)="checkedColumnsName(option)"
                     [checked]="isCheckedColumnsName[option]"
+                    color="primary"
                     >{{ option }}</mat-checkbox
                   >
                 </p>

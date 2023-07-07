@@ -5,18 +5,18 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { Subscription, debounceTime, tap } from 'rxjs';
+import { debounceTime, Subscription, tap } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
-import { CollumnsName } from '../../models/collumnsName.type';
+import { ColumnsName } from '../../models/collumnsName.type';
 import { SortUsersService } from '../../services/sort-users.service';
 import { UsersFacadeService } from '../../services/users-facade.service';
 import { UserData } from '../../models/user-data.model';
-import { checkboxNames } from '../../constans/checkbox-name.const';
-import { columnsName } from '../../constans/collumns-name.const';
-import { isCheckedColumnsName } from '../../constans/is-checked-collumns-name.const';
+import { checkboxNames } from '../../constans/checkbox-name';
+import { columnsName } from '../../constans/collumns-name';
+import { isCheckedColumnsName } from '../../constans/is-checked-collumns-name';
 
 @Component({
   selector: 'agn-table',
@@ -33,7 +33,7 @@ export class TableComponent implements OnInit, OnDestroy {
   public filterControl: FormControl = new FormControl('');
   @ViewChild(MatPaginator) public paginator!: MatPaginator;
   @ViewChild(MatSort) public sort!: MatSort;
-  private subs = new Subscription();
+  private subscriptions = new Subscription();
 
   constructor(
     private usersFacadeService: UsersFacadeService,
@@ -41,7 +41,7 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit(): void {
-    this.subs.add(
+    this.subscriptions.add(
       this.usersSortService.sortedUsers$
         .pipe(
           tap(() => {
@@ -54,7 +54,7 @@ export class TableComponent implements OnInit, OnDestroy {
           this.users.sort = this.sort;
         })
     );
-    this.subs.add(
+    this.subscriptions.add(
       this.filterControl.valueChanges
         .pipe(debounceTime(300))
         .subscribe((value) => {
@@ -67,7 +67,7 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this.subs.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   public sortedUsers(sortCriteria: Sort): void {
@@ -78,7 +78,7 @@ export class TableComponent implements OnInit, OnDestroy {
     this.isCheckboxVisible = !this.isCheckboxVisible;
   }
 
-  public checkedColumnsName(columnName: CollumnsName): void {
+  public checkedColumnsName(columnName: ColumnsName): void {
     this.isCheckedColumnsName[columnName] =
       !this.isCheckedColumnsName[columnName];
   }

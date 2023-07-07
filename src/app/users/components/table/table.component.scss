@@ -1,96 +1,12 @@
 :host {
   display: block;
   padding: 20px;
-}
 
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+  ::ng-deep {
+    .mat-mdc-header-row {
+      background-color: #b0c4f0;
 
-.content {
-  overflow: auto;
-  flex: 1 0 auto;
-}
-
-.spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-}
-
-.table {
-  position: relative;
-  &__name {
-    min-width: 170px;
-  }
-
-  &__company {
-    min-width: 100px;
-  }
-
-  &__balance {
-    min-width: 100px;
-  }
-
-  &__email {
-    min-width: 250px;
-  }
-
-  &__address {
-    min-width: 200px;
-  }
-
-  &__tags {
-    min-width: 340px;
-  }
-
-  &__visible {
-    cursor: pointer;
-  }
-
-  &__section {
-    position: absolute;
-    right: 60px;
-    top: 50px;
-    z-index: 10;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    overflow-y: scroll;
-    max-height: 300px;
-  }
-
-  &__add {
-    position: relative;
-  }
-  &__vision {
-    display: none;
+    }
   }
 }
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.red-dot::before {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 10px 0 0;
-  border-radius: 50%;
-  background-color: red;
-}
 
-.green-dot::before {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 10px 0 0;
-  border-radius: 50%;
-  background-color: green;
-}

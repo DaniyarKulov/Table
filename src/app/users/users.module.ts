@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './components/table/table.component';
-import { Features } from './users-store/constants/features';
 import { UsersComponent } from './users.component';
-import { UsersEffects } from './users-store/users.effects';
-import { usersReducer } from './users-store/users.reducer';
 import { SharedModule } from '../shared/shared.module';
 import { ColumnVisionDirective } from './directives/column-vision.directive';
+import { Features } from './store/constants/features';
+import { usersReducer } from './store/users.reducer';
+import { UsersEffects } from './store/users.effects';
+import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [TableComponent, UsersComponent, ColumnVisionDirective],
@@ -18,6 +19,7 @@ import { ColumnVisionDirective } from './directives/column-vision.directive';
     SharedModule,
     NgOptimizedImage,
     ReactiveFormsModule,
+    UsersRoutingModule,
     StoreModule.forFeature(Features.Users, usersReducer),
     EffectsModule.forFeature([UsersEffects]),
   ],

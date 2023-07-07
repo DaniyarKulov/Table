@@ -1,6 +1,6 @@
-import { CollumnsName } from '../models/collumnsName.type';
+import { ColumnsName } from '../models/collumnsName.type';
 
-export const columnsName: CollumnsName[] = [
+export const columnsName: ColumnsName[] = [
   'name',
   'age',
   'picture',

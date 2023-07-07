@@ -1,4 +1,4 @@
-export type CollumnsName =
+export type ColumnsName =
   | 'name'
   | 'picture'
   | 'age'

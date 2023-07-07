@@ -1,0 +1,44 @@
+.table {
+  position: relative;
+
+  &__visible {
+    cursor: pointer;
+  }
+
+  &__section {
+    position: absolute;
+    right: 60px;
+    top: 50px;
+    z-index: 10;
+    background-color: white;
+    border: 2px solid #e3e2e2;
+    border-radius: 5px;
+    overflow-y: scroll;
+    max-height: 300px;
+  }
+
+  &__add {
+    position: relative;
+  }
+
+  &__vision {
+    display: none;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  overflow: auto;
+  flex: 1 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

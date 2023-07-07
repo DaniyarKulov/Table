@@ -45,8 +45,8 @@
     "eslint": "^8.33.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.25.2",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -56,8 +56,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "lint-staged": "^13.2.1",
     "ng-lint-staged": "^12.0.4",
-    "typescript": "~4.9.4",
-    "prettier": "2.8.7"
+    "prettier": "2.8.7",
+    "typescript": "~4.9.4"
   },
   "lint-staged": {
     "src/**/*.ts": [
