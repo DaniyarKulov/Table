@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  padding: 20px;
+
+  ::ng-deep {
+    .mat-mdc-header-row {
+      background-color: var(--agn-color-table-th);
+    }
+  }
+}
