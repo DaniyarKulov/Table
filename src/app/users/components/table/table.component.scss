@@ -4,9 +4,7 @@
 
   ::ng-deep {
     .mat-mdc-header-row {
-      background-color: #b0c4f0;
-
+      background-color: var(--agn-color-table-th);
     }
   }
 }
-

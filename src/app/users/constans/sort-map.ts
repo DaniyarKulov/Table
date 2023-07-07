@@ -1,5 +1,5 @@
 import { SortMap } from '../models/sort-map.type';
-import { localeStringComparator } from './locale-string-comparator';
+import { localeStringComparator } from '../utils/locale-string-comparator';
 
 export const sortMap: SortMap = {
   name: (a, b) =>

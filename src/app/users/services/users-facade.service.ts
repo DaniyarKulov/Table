@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getLoading } from '../store/users.action';
+import { startUsersLoading } from '../store/users.action';
 import { selectLoading, selectUsers } from '../store/users.selectors';
 
 @Injectable({
@@ -13,6 +13,6 @@ export class UsersFacadeService {
   constructor(private store$: Store) {}
 
   public getLoading(): void {
-    this.store$.dispatch(getLoading());
+    this.store$.dispatch(startUsersLoading());
   }
 }
